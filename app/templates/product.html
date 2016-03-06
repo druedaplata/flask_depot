@@ -1,0 +1,17 @@
+
+        <table class="table table-striped">
+            <tr>
+                <td colspan="2"><strong>{{ product.title }}</strong></td>
+            </tr>
+            <tr>
+                <td><img src="{{ product.get_image() }}"></td>
+                <td rowspan="2">{{ product.description }}</td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>{{ product.get_price() }}</strong>
+                    <span style="float:right">
+                        <a class="btn btn-default" href="{{ url_for('add', product_id = product.id ) }}">Add to Cart</a>
+                    </span>
+                </td>
+            </tr>
+        </table>

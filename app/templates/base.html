@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Welcome to Pragmatic</title>
+    {% endif %}
+
+    <style type="text/css">
+	/* make sidebar nav vertical */
+	@media (min-width: 768px) {
+	  .sidebar-nav .navbar .navbar-collapse {
+		padding: 0;
+		max-height: none;
+	  }
+	  .sidebar-nav .navbar ul {
+		float: none;
+	  }
+	  .sidebar-nav .navbar ul:not {
+		display: block;
+
+	  }
+	  .sidebar-nav .navbar li {
+		float: none;
+		display: block;
+	  }
+	  .sidebar-nav .navbar li a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	  }
+	}
+	@media (min-width: 768px) {
+	  /* uncomment if you would like the menu to be fixed */
+	   /*.navbar {
+		  position: fixed;
+		  width: 170px;
+		  z-index: 2;
+	  }*/
+	}
+	@media (min-width: 992px) {
+	  .navbar {
+		  width: 212px;
+          margin-left: 50px;
+	  }
+	}
+	@media (min-width: 1200px) {
+	  .navbar {
+		  width: 262px;
+          margin-left: 100px;
+	  }
+	}
+	.sidebar-nav .navbar-header{ float: none; }
+
+    .im-centered {
+        margin: auto;
+        max-width: 900px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h1>Pragmatic Bookshelf</h1>
+              <a class="btn btn-primary btn-large">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sidebar-nav">
+                        <div class="navbar navbar-default" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                                  <span class="sr-only">Toggle navigation</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                </button>
+                                <span class="visible-xs navbar-brand">Sidebar menu</span>
+                            </div>
+                            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                  <li><a href="#">Home</a></li>
+                                  <li><a href="#">Questions</a></li>
+                                  <li><a href="#">News</a></li>
+                                  <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                            <div>
+                                {% if cart %}
+                                    {% include 'cart.html' %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    {% block content %} {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Footer header</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+              <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+              <br>Ut enim ad minim veniam, quis nostrud</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-info text-right">
+              <br>
+              <br>
+            </p>
+            <div class="row">
+              <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 hidden-xs text-right">
+                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

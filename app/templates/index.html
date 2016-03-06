@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h4>Your Pragmatic Catalog</h4>
+    <hr>
+    {% for product in products %}
+        {% include 'product.html' %}
+    {% endfor %}
+{% endblock %}
