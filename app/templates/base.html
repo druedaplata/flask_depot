@@ -101,7 +101,7 @@
                             </div>
                             <!--/.nav-collapse -->
                             <div>
-                                {% if cart %}
+                                {% if session['cart'] %}
                                     {% include 'cart.html' %}
                                 {% endif %}
                             </div>

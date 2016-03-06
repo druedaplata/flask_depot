@@ -1,5 +1,12 @@
 <table class="table">
     <tr>
-        <td colspan="2"><strong>Shopping Cart</strong></td>
+        <td><strong>Shopping Cart</strong></td>
     </tr>
+    {% for line_item in cart.line_item %}
+    <tr>
+        <td>{{line_item.product.title}}</td>
+        <td>{{line_item.quantity}}</td>
+        <td><a class="btn btn-default" href="{{ url_for('remove', product_id = line_item.product.id) }}">X</a></td>
+    </tr>
+    {% endfor %}
 </table>
